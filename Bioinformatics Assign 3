@@ -1,0 +1,10 @@
+sed 's/Zoo//g' pandas.txt > nozoopandas.txt
+sort -k2 pandas.txt |  awk '{print$1,$4,$2}' > newcolumns.txt   
+sort -k5 pandas.txt | awk '{print$5}' > zoosorting.txt
+ sed 's/female/F/' pandas.txt | sed 's/male/M/' > male_female.txt
+ grep -c 'October.*female\|female.*October' pandas.txt
+grep -n '[name,1-32]' pandas.txt > countingpandas.txt
+sed -n '1p; 6p; 17p' pandas.txt > pandalines.txt
+grep  -i 'x' pandas.txt > Xpandas.txt
+awk '{a[tolower($5)]++}END{for(i in a){if(a[i]==1){print i}}}' pandas.txt | sort | uniq | grep -v 'atlanta\|location' > uniquelocations.txt
+awk '$4<=10{print $4,$0}' pandas.txt | sort -n | awk '{print $2,$1}' > youngpandas.txt
